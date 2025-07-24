@@ -98,9 +98,8 @@ const ArtworksTable: React.FC = () => {
       setSelectCount(''); 
     }
   };
-
   const selectionHeader = (options: ColumnHeaderOptions) => (
-    <div className="flex items-center justify-center">
+    <>
       <Tooltip target=".select-multiple-tooltip" />
       <Button 
         type="button" 
@@ -130,7 +129,7 @@ const ArtworksTable: React.FC = () => {
           </div>
         </div>
       </OverlayPanel>
-    </div>
+    </>
   );
 
   const inscriptionsBodyTemplate = (rowData: Artwork) => { 
@@ -199,9 +198,14 @@ const ArtworksTable: React.FC = () => {
       <Column 
         selectionMode="multiple" 
         header={selectionHeader} 
-        headerClassName={headerCellClassName} 
+        headerClassName={headerCellClassName}
         bodyClassName={bodyCellClassName} 
         style={{ width: '6rem' }}
+        pt={{
+          headerContent: {
+            className: 'flex items-center justify-center flex-row-reverse'
+          }
+        }}
       />
       <Column field="title" header="Title" sortable style={{ minWidth: '20rem' }} headerClassName={headerCellClassName} bodyClassName={bodyCellClassName} />
       <Column field="artist_display" header="Artist" sortable style={{ minWidth: '20rem' }} headerClassName={headerCellClassName} bodyClassName={bodyCellClassName} />

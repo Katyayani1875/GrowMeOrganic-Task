@@ -1,6 +1,5 @@
 .p-datatable .p-checkbox {
   display: inline-block;
-  margin-right: 0.5rem;
 }
 
 .p-datatable .p-checkbox .p-checkbox-box {
@@ -23,6 +22,21 @@
 .p-datatable .p-checkbox .p-checkbox-icon {
   font-size: 0.75rem;
   color: white; 
+}
+
+.custom-selection-column .p-column-header-content {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.custom-selection-column .p-checkbox {
+  order: 1 !important;
+}
+
+.custom-selection-column .select-multiple-tooltip {
+  order: 2 !important;
+  margin-left: 0.25rem;
 }
 
 .p-paginator .p-paginator-pages .p-paginator-page {
